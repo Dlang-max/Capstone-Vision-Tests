@@ -1,29 +1,28 @@
+import numpy as np
 import cv2
 
-# Create instances of cv2.VideoCapture for each camera
-cap1 = cv2.VideoCapture(0)
-cap2 = cv2.VideoCapture(1)
+video_capture_0 = cv2.VideoCapture(1)
+video_capture_1 = cv2.VideoCapture(0)
 
 while True:
-    # Read a frame from each camera
-    ret1, frame1 = cap1.read()
-    ret2, frame2 = cap2.read()
+    # Capture frame-by-frame
+    ret0, frame0 = video_capture_0.read()
+    ret1, frame1 = video_capture_1.read()
 
-    # Resize the frames to have the same height
-    h, w = frame1.shape[:2]
-    frame2 = cv2.resize(frame2, (w, h))
+    if (ret0):
+        # Display the resulting frame
+        cv2.imshow('Cam 0', frame0)
+        print('frame0')
 
-    # Concatenate the frames horizontally
-    frame_concat = cv2.hconcat([frame1, frame2])
+    if (ret1):
+        # Display the resulting frame
+        cv2.imshow('Cam 1', frame1)
+        print('frame1')
 
-    # Display the concatenated frame
-    cv2.imshow('Cameras', frame_concat)
-
-    # Wait for a key press and exit if the 'q' key is pressed
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-# Release the resources and close the windows
-cap1.release()
-cap2.release()
+# When everything is done, release the capture
+video_capture_0.release()
+video_capture_1.release()
 cv2.destroyAllWindows()

@@ -1,6 +1,6 @@
 import cv2
 
-cap = cv2.VideoCapture(0)  # create a VideoCapture object to access the camera
+cap = cv2.VideoCapture(1)  # create a VideoCapture object to access the camera
 
 cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25)  # disable auto-exposure
 cap.set(cv2.CAP_PROP_EXPOSURE, -9)  # set the exposure to -4 (corresponds to a shutter speed of 1/1000)
