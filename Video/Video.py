@@ -5,7 +5,10 @@ import numpy as np
 cap = cv2.VideoCapture(0)
 
 cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25) 
-cap.set(cv2.CAP_PROP_EXPOSURE, -6)
+cap.set(cv2.CAP_PROP_EXPOSURE, -8)
+
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 320)
  
 # Check if camera opened successfully
 if (cap.isOpened() == False): 
