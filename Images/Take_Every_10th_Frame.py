@@ -25,7 +25,7 @@ cap.set(4, 1080)
 cap.set(10,cameraBrightness)
 
 cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25)  # disable auto-exposure
-cap.set(cv2.CAP_PROP_EXPOSURE, -8)  # set the exposure to -4 (corresponds to a shutter speed of 1/1000)
+cap.set(cv2.CAP_PROP_EXPOSURE, -10)  # set the exposure to -4 (corresponds to a shutter speed of 1/1000)
 
 count = 0
 countSave =0
