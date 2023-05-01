@@ -30,6 +30,7 @@ cap.set(cv2.CAP_PROP_EXPOSURE, -10)  # set the exposure to -4 (corresponds to a 
 
 
 
+
 count = 0
 countSave = 0
 
@@ -48,6 +49,7 @@ while True:
     success, img = cap.read()
 
     img = cv2.resize(img,(imgWidth,imgHeight))
+
     if grayImage:img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     if saveData:
         blur = cv2.Laplacian(img, cv2.CV_64F).var()
