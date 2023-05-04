@@ -2,7 +2,7 @@ import cv2
 import numpy as np
  
 # Create a VideoCapture object
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25) 
 cap.set(cv2.CAP_PROP_EXPOSURE, -10)
@@ -24,6 +24,7 @@ out = cv2.VideoWriter('outpy.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 30, (
  
 while(True):
   ret, frame = cap.read()
+
  
   if ret == True: 
      

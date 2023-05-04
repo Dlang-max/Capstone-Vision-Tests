@@ -5,15 +5,15 @@ import time
 #####################################################
 
 myPath = 'data/images' # Rasbperry Pi:  '/home/pi/Desktop/data/images'
-cameraNo = 0
+cameraNo = 1
 cameraBrightness = 500
 moduleVal = 10  # SAVE EVERY ITH FRAME TO AVOID REPETITION
 minBlur = 10  # SMALLER VALUE MEANS MORE BLURRINESS PRESENT
 grayImage = False # IMAGES SAVED COLORED OR GRAY
 saveData = True   # SAVE DATA FLAG
 showImage = True  # IMAGE DISPLAY FLAG
-imgWidth = 640
-imgHeight = 480
+imgWidth = 320
+imgHeight = 320
 
 
 #####################################################
@@ -47,7 +47,6 @@ if saveData:saveDataFunc()
 while True:
 
     success, img = cap.read()
-
     img = cv2.resize(img,(imgWidth,imgHeight))
 
     if grayImage:img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
